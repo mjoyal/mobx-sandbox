@@ -20,7 +20,10 @@ const UserStore = types.model('UserStore', {
         self.reset();
         console.log('waiting....')
         
-        self.addUsersToUsersArray(10);
+        const testAmount = 100000; 
+        self.addUsersToMap(testAmount);
+        self.addUsersToUsersArray(testAmount);
+        
         self.currentUser = self.randomUser;
 
         console.log('currentUser -->', self.currentUser.name)
@@ -29,20 +32,37 @@ const UserStore = types.model('UserStore', {
       }),
 
       addUsersToUsersArray(amountOfUsers) {
-        const startTime = new Date();
+        const startTime = Date.now();
 
-        for(let i = 0; i < amountOfUsers; i++) {
+        for (let i = 0; i < amountOfUsers; i++) {
             const user = createUser();
             self.usersArray.push(user); 
         }
 
-        const endTime = new Date ();
+        const endTime = Date.now();
 
         const timeString = `${(endTime - startTime) / 1000} seconds`
 
-        console.log(`time to add ${amountOfUsers} to array -->`, timeString);
+        console.log(`time to add ${amountOfUsers} items to array -->`, timeString);
         
       },
+
+      addUsersToMap(amountOfUsers) {
+      
+      const startTime = Date.now();
+
+      for (let i = 0; i < amountOfUsers; i++) {
+          const user = createUser();
+          self.usersMap.put(user);
+          }
+
+      const endTime = Date.now();
+
+      const timeString = `${(endTime - startTime) / 1000} seconds`
+        
+      console.log(`time to add ${amountOfUsers} items to map -->`, timeString);
+
+      }, 
 
       reset () {
         applySnapshot(self, {});
@@ -53,13 +73,13 @@ const UserStore = types.model('UserStore', {
     return {
 
       get findCurrentUserInArray() {
-        const startTime = new Date();
+        const startTime = Date.now();
 
         const foundUser = self.usersArray.find((user) => {
           return user.id === self.currentUser.id;
         })
 
-        const endTime = new Date();
+        const endTime = Date.now();
         const timeString = `${(endTime - startTime) / 1000} seconds`
 
         console.log(`time to find user in array with ${self.usersArray.length} items`, timeString);
