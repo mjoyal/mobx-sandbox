@@ -12,8 +12,8 @@ const RootStore = types
   .actions((self) => {
     return {
       afterCreate() {
-        console.log('store created!')
-      }
+        console.log('RootStore created!')
+      }, 
     };
   });
 

@@ -1,7 +1,4 @@
-import RootStore from './stores/rootStore.js'
+import UserStore from './stores/userStore.js'
 
-const store = RootStore.create({
-    name: 'sandbox'
-});
 
-console.log(store.userStore.users.length);
+const userStore = UserStore.create({});

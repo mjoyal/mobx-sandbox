@@ -1,4 +1,6 @@
 import { faker } from '@faker-js/faker'; 
+import { resolve } from 'path';
+import { start } from 'repl';
 import { v4 as createUUID } from 'uuid';
 
 const createUser = () => {
@@ -17,7 +19,11 @@ const createGroup = (amountOfUsers) => {
         users.push(createUser()); 
     }
 
-    return users; 
+    return new Promise((res, rej) => {
+        res(users);
+
+        rej({});
+    });
 }
 
 export default createGroup; 
