@@ -1,0 +1,17 @@
+{
+  "name": "mst-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mobx": "^6.5.0",
+    "mobx-react-lite": "^3.3.0",
+    "mobx-state-tree": "^5.1.3"
+  }
+}
