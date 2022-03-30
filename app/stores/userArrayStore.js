@@ -27,7 +27,6 @@ const UserArrayStore = types.model('UserStore', {
 
          self.currentUser = self.randomUser;
 
-         console.log(self.users.push(self.currentUser));
 
         // console.log('currentUser -->', self.currentUser.name)
         // console.log('found user --->', self.findCurrentUser.name);
