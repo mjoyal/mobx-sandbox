@@ -18,7 +18,7 @@ const UserArrayStore = types.model('UserStore', {
         self.reset();
         
         const testAmount = 5000; 
-        const reps = 1; 
+        const reps = 10; 
 
         const averageTime = self.calculateAverage(self.addUsers, reps, testAmount);
 
