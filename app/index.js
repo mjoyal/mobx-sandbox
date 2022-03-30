@@ -1,5 +1,5 @@
-import UserStore from './stores/userStore.js'
+import UserArrayStore from './stores/userArrayStore.js'
 
 
-const userStore = UserStore.create({});
+UserArrayStore.create({});
 
